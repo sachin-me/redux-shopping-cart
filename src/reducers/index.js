@@ -28,7 +28,8 @@ export default function reducers(state=initState, action) {
     case 'SET_FILTER' : {
       return {
         ...state,
-        appliedFilter : [...state.appliedFilter, action.filter]
+        appliedFilter : [...state.appliedFilter, action.filter],
+        filterArr: [...state.appliedFilter, action.filter]
       }
     }
 
@@ -39,7 +40,8 @@ export default function reducers(state=initState, action) {
     
       return {
         ...state,
-        appliedFilter : filteredArrayCopy
+        appliedFilter : filteredArrayCopy,
+        filterArr: filteredArrayCopy
       }
     }
 
@@ -47,6 +49,14 @@ export default function reducers(state=initState, action) {
       return {
         ...state,
         cartArr: [...state.cartArr, state.productItems[action.e.target.id]]
+      }
+    }
+
+    case 'DELETE_CART' : {
+      state.cartArr.splice(action.id, 1)
+      return {
+        ...state,
+        cartArr: [...state.cartArr]
       }
     }
       

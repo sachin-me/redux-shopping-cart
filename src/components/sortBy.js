@@ -1,11 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as mapDispatchToProps from '../actions';
+let productCounter;
 
 function SortBy(props) {
+  const {productArr} = props
+  if (!productArr) {productCounter = props.productItems.length}
+  else {productCounter = productArr.length}
   return (
     <div className="sort-items">
-      <h2>:Products Found</h2>
+      <h2>{productCounter}:Products Found</h2>
       <div>
         <span>Order By: </span>
         <select name="" id="" onChange={

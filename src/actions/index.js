@@ -32,9 +32,15 @@ export function removeFilter(filter) {
 }
 
 export function cart(e) {
-  console.log(e)
   return {
     type: "CART",
     e
+  }
+}
+
+export function handleDeleteCart(id) {
+  return {
+    type: "DELETE_CART",
+    id
   }
 }
