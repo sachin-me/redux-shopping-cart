@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {connect} from 'react-redux';
+import { displayData } from './actions/index';
+import Main from './components/Main';
 
 class App extends Component {
+  
+  componentWillMount() {
+    fetch('https://gist.githubusercontent.com/SiddharthShringi/00b55e2aed2dc0512621bfb42c609659/raw/0590c7f044ad3264d9586251e2a5da03659f835f/shoppingKartData.json').then(d => d.json()).then(data => this.props.displayData(data.products))
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Main />
       </div>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = {displayData};
+
+const mapStateToProps = (state) => {
+  return {
+    productItems: state.productItems,
+    filterArr: state.filterArr
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
