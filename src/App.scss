@@ -49,7 +49,7 @@ body {
     display: inline-block;
     float: left;
     margin: 0;
-    color: #444;
+    color: #555;
   }
   div {
     float: right;
@@ -61,7 +61,7 @@ body {
   }
   select {
     height: 30px;
-    border: 1px solid #02b3e4;
+    border: 1px solid #465667;
     border-radius: 5px;
     outline: none;
   }
@@ -74,26 +74,22 @@ body {
     height: 400px;
     width: 100%;
   }
-  h3 {
-    color: #333;
-  }
-  p {
-    color: #555;
-  }
   h3, p {
     margin: 0;
     padding: 5px 0;
+    color: #ebe3e3;
   }
   button {
     background: transparent;
-    color: #282c34;
-    border: 1px solid crimson;
+    color: #ebe3e3;
+    border: 1px solid #333;
     padding: 10px 20px;
     border-radius: 3px;
+    outline: none;
     cursor: pointer;
     &:focus, &:hover {
-      background: #282c34;
-      color: #f2f2f2;
+      background: #465667;
+      color: #fff;
       border: none;
     }
   }
@@ -101,10 +97,13 @@ body {
     padding-bottom: 5px;
     margin: 5px;
     box-shadow: 8px 10px 20px 0 rgba(46,61,73,.15);
-    background-color: #02b3e4;
+    background-color: #465667;
     &:hover {
       box-shadow: none;
-      background: #2ca4db;
+      background: #666;
+      button {
+        border: 1px solid rgba(235, 231, 231, 0.829);
+      }
     }
   }
 }
@@ -126,7 +125,7 @@ body {
     color: #555;
   }
   button {
-    background: #02b3e4;
+    background: #465667;
     color: #f2f2f2;
     border: none;
     padding: 1px;
@@ -137,7 +136,7 @@ body {
     outline: none;
     cursor: pointer;
     &:focus, &:active, &:hover {
-      background: #282c34;
+      background: #666;
       color: #f2f2f2;
       border: none;
     }
@@ -151,20 +150,20 @@ body {
   width: 50px;
   display: grid;
   place-items: center;
-  color: crimson;
+  color: #465667;
   font-size: 25px;
   position: relative;
   background: url('./products-image/cart.png') no-repeat;
 }
 
 .cart-item {
-  border: 1px solid #02b3e4;
+  border: 1px solid #465667;
   position: absolute;
   top: 51px;
   width: 350px;
   padding: 5px;
   right: 0;
-  background: #282c34;
+  background: #666;
   div {
     display: grid;
     grid-template-columns: auto 1fr;
