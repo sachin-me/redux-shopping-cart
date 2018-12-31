@@ -3,6 +3,7 @@ import './App.scss';
 import {connect} from 'react-redux';
 import { displayData } from './actions/index';
 import Main from './components/Main';
+import Cart from './components/Cart';
 
 class App extends Component {
   
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Main />
+        <Cart />
       </div>
     );
   }

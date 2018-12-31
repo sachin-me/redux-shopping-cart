@@ -22,6 +22,7 @@ function SizeFilter(props) {
 
   return (
     <div className="size-btn">
+      <h3>Sizes:</h3>
       {
         fileredArr && fileredArr.map((v, i) => {
           return (

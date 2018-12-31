@@ -31,6 +31,7 @@ class Cart extends Component {
                       <h5>${v.price}</h5>
                       <p>Quantity: 1</p>
                     </div>
+                    <button className="cart-item-remove">X</button>
                   </div>
                 )
               })
