@@ -15,6 +15,13 @@ class Cart extends Component {
     })
   }
 
+  handleCheck = () => {
+    alert(`Subtotal: $${this.props.cartArr.reduce((acc, v) => {
+      acc = acc + v.price;
+      return acc;
+    }, 0)}`)
+  }
+
   render() {
     return (
       <div className="cart" onClick={this.hanldleClick}>
@@ -38,6 +45,15 @@ class Cart extends Component {
                 )
               })
             }
+            <p className="subtotal">
+              {
+                `Subtotal: $${this.props.cartArr.reduce((acc, v) => {
+                acc = acc + v.price;
+                return acc;
+              }, 0)}`
+              }
+            </p>
+            <button className="checkout-btn" onClick={this.handleCheck}>Checkout</button>
           </div> : this.props.cartArr.length
         }
       </div>
